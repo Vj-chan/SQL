@@ -1,0 +1,68 @@
+
+TO CREATE A TABLE : 
+
+      create table eeeboys18 (
+      Reg_num decimal(12,0) primary key, 
+      student_name varchar(25),
+      CGPA decimal(4,2) );
+
+*******************************************************************************************
+
+TO INSERT INFORMATION INTO A TABLE :
+
+      INSERT INTO eeeboys18 values (821114105001, 'AJITH KUMAR S', 6.89);
+      INSERT INTO eeeboys18 values (821114105002, 'AMARNATH S', 7.06);
+      INSERT INTO eeeboys18 values (821114105003, 'DHARUN K', 9.99);
+      INSERT INTO eeeboys18 values (821114105004, 'INSATHULLAH B', 6.23);
+      INSERT INTO eeeboys18 values (821114105005, 'KALISHWARAN S', 6.49);
+      INSERT INTO eeeboys18 values (821114105025, 'VIJAY CHANDRAN M', 6.50);
+
+*******************************************************************************************
+
+SELECTING A TABLE TO RETRIEVE INFORMATION :
+
+      select * from eeeboys18;                       ###(' * ' WILL SELECT ALL THE DATA IN THE GIVEN TABLE)###
+
+*******************************************************************************************
+
+TO ADD A NEW COLUMN IN EXISTING TABLE : 
+
+alter table eeeboys18 add column (location varchar(30) null);
+
+*******************************************************************************************
+
+TO UPDATE NEW DATA IN EXISTING ROWS :
+
+update eeeboys18
+set location = 'gandharvakottai'
+where Reg_num = 821114105001 ;
+
+update eeeboys18
+set location = 'thanjavur'
+where Reg_num = 821114105002 ;
+
+update eeeboys18
+set location = 'mannargudi'
+where Reg_num = 821114105003 ;
+
+update eeeboys18
+set location = 'karambaikkudi'
+where Reg_num = 821114105004 ;
+
+update eeeboys18
+set location = 'pattukottai'
+where Reg_num = 821114105005 ;
+
+update eeeboys18
+set location = 'thanjavur'
+where Reg_num = 821114105025 ;
+
+*******************************************************************************************
+
+TO DELETE A TABLE COMPLETELY : 
+
+drop table eeeboys18;
+
+*******************************************************************************************
+
+
