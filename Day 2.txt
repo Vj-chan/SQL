@@ -1,0 +1,71 @@
+
+TO CREATE ANOTHER TABLE RELATED TO PREVIOUS TABLE WITH FOREIGN KEY : 
+
+      create table eeestaff (
+      staff_id int primary key, 
+      staff_name varchar(25) );
+------------------------------------------------------------
+      create table eeeproject (
+      Batch_num int primary key, 
+      Guide_name varchar(25)
+      Guide_id int
+      foreign key(Guide_id) references eeestaff(staff_id) on delete set null );
+
+*******************************************************************************************
+
+TO INSERT INFORMATION INTO TABLE :
+
+      INSERT INTO eeestaff VALUES (101, 'Sivakumar');
+      INSERT INTO eeestaff VALUES (102, 'Albert');
+      INSERT INTO eeestaff VALUES (103, 'Narasimman');
+      INSERT INTO eeestaff VALUES (104, 'Karthikeyan');
+      INSERT INTO eeestaff VALUES (105, 'Arokiyaraj');
+      INSERT INTO eeestaff VALUES (106, 'Rajeshwari');
+      INSERT INTO eeestaff VALUES (107, 'Hemavathi');
+      INSERT INTO eeestaff VALUES (108, 'Prabha');
+      INSERT INTO eeestaff VALUES (109, 'Priya');
+-------------------------------------------------------------
+      INSERT INTO eeeproject VALUES (1, 'Sivakumar', 101);
+      INSERT INTO eeeproject VALUES (2, 'Albert', 102);
+      INSERT INTO eeeproject VALUES (3, 'Arokiyaraj', 105);
+      INSERT INTO eeeproject VALUES (4, 'Karthikeyan', 104);
+
+*******************************************************************************************
+
+TO ADD A NEW COLUMN AND FOREIGN KEY IN EXISTING TABLE : 
+
+alter table eeeboys18 add column (project_batch int null);
+
+alter table eeeboys18 add foreign key(project_batch) references eeeproject(Batch_num) on delete set null;
+
+*******************************************************************************************
+
+TO UPDATE NEW DATA IN EXISTING ROWS :
+
+update eeeboys18
+set project_batch = 3
+where Reg_num = 821114105001 ;
+
+update eeeboys18
+set project_batch = 3
+where Reg_num = 821114105002 ;
+
+update eeeboys18
+set project_batch = 3
+where Reg_num = 821114105003 ;
+
+update eeeboys18
+set project_batch = 4
+where Reg_num = 821114105004 ;
+
+update eeeboys18
+set project_batch = 4
+where Reg_num = 821114105005 ;
+
+update eeeboys18
+set project_batch = 1
+where Reg_num = 821114105025 ;
+
+*******************************************************************************************
+
+
