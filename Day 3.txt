@@ -1,0 +1,41 @@
+--Task : To find out the different locations of students
+--       in a distinct list and arrange it in alphabetical order
+
+SELECT DISTINCT location
+FROM eeeboys18
+order by location;
+
+*************************************************************************
+
+--Task : To find out the students from thanjavur with above 6.5 CGPA or 
+--       students from batch no.1
+
+SELECT student_name
+FROM eeeboys18
+WHERE (cgpa>6.5 AND location='thanjavur') OR project_batch=1;
+
+**************************************************************************
+
+--Task : To arrange all the staff name in alphabetical order
+
+SELECT *
+FROM eeestaff
+ORDER BY staff_name;
+
+**************************************************************************
+
+--Task : To get the name of the boys from thanjavur and gandharvakottai
+--       as local boys
+
+SELECT student_name AS 'local boys'
+FROM eeeboys18
+WHERE location IN ('thanjavur', 'gandharvakottai');
+
+**************************************************************************
+
+--Task : To get the name of the boys having cgpa between 6.5 and 10
+--       as first class boys
+
+SELECT student_name AS '1st class boys'
+FROM eeeboys18
+WHERE CGPA BETWEEN 6.5 AND 10;
