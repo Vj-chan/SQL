@@ -1,0 +1,70 @@
+-- Queries using LIKE
+-- To find the student names starting with 'a'
+
+SELECT *
+FROM eeeboys18
+WHERE student_name LIKE 'a%';
+
+-- To find the student names ending with 's'
+
+SELECT *
+FROM eeeboys18
+WHERE student_name LIKE '%s';
+
+-- To find the student names with 'r' as the fourth letter
+
+SELECT *
+FROM eeeboys18
+WHERE student_name LIKE '___r%';
+
+-- To find the student names with word 'ishwar' in it
+
+SELECT *
+FROM eeeboys18
+WHERE student_name LIKE '%ishwar%';
+
+
+-- Queries using MIN, MAX
+-- To find the lowest cgpa got by the students
+
+SELECT MIN(CGPA)
+FROM eeeboys18;
+
+-- To find the highest cgpa got by the students
+
+SELECT MAX(CGPA)
+FROM eeeboys18;
+
+
+-- Queries using COUNT
+-- To find the number of students coming from 'thanjavur'
+
+SELECT COUNT(student_name)
+FROM eeeboys18
+WHERE location = 'thanjavur';
+
+
+-- Queries using AVG, SUM
+-- To find the average cgpa got by the students
+
+SELECT AVG(CGPA)
+FROM eeeboys18;
+
+-- To find the sum of cgpa got by the students
+
+SELECT SUM(CGPA)
+FROM eeeboys18;
+
+
+-- Queries using ORDER BY ASC, DESC
+-- To get all the staff names arranged in alphabetical order
+
+SELECT *
+FROM eeestaff
+ORDER BY staff_name ASC;
+
+-- To get all the staff names arranged in reversed alphabetical order
+
+SELECT *
+FROM eeestaff
+ORDER BY staff_name DESC;
