@@ -1,0 +1,20 @@
+-- TASK: To find the project guide details for all the students
+
+USE vjchan;
+
+SELECT *
+FROM eeeboys18
+LEFT JOIN eeeproject
+ON eeeboys18.project_batch = eeeproject.Batch_num;
+
+-- ----------------------------------------------------------------------------
+
+-- I used a default database in MySQL called WORLD for this query
+
+
+USE world;
+
+SELECT country.name as 'Country', countrylanguage.language AS 'Spoken language'
+FROM country
+LEFT JOIN countrylanguage 
+ON country.code=countrylanguage.countrycode
