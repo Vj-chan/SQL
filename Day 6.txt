@@ -1,0 +1,44 @@
+-- In today task I'm going to use the default Database 'world' which is available in the MySql workbench itself
+
+	USE world;
+
+
+-- Using RIGHT JOIN
+-- Find the capital, capital's population and its percentage for first 100 countries
+
+	SELECT 
+	country.Name AS 'Country', 
+	city.Name AS 'Capital', 
+	city.Population AS 'Capital_Population', 
+	((city.population/country.population)*100) AS '% in Total population' 
+	FROM city 
+	RIGHT JOIN country 
+	ON city.id = country.capital 
+	LIMIT  100;
+
+
+-- Using INNER JOIN
+-- Find all the languages spoken in India and the official language
+
+	SELECT 
+	c.name AS 'COUNTRY', 
+	cl.language AS 'LANGUAGE', 
+	cl.isofficial
+	FROM country c
+	INNER JOIN countrylanguage cl
+	ON c.code = cl.countrycode
+	WHERE  c.code = 'IND';
+
+
+-- Using CROSS JOIN
+-- Find all the country name, its capital, and its Independance year
+
+	SELECT 
+	co.name AS 'COUNTRY', 
+	ci.name AS 'CAPITAL', 
+	co.indepyear AS 'INDEPENDANCE_YEAR'
+	FROM city ci
+	CROSS JOIN country co
+	ON ci.id = co.capital;
+
+
